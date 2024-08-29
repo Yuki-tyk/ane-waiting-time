@@ -7,7 +7,6 @@ import { HOSPITALS } from './utils/hospitals'
 function App() {
   const [updatedTime, setUpdatedTime] = useState(null)
   const [hospitals, setHospitals] = useState(HOSPITALS)
-  // console.log(hospitals)
 
   async function fetchAPIData() {
     const url = "https://www.ha.org.hk/opendata/aed/aedwtdata-en.json"
@@ -15,39 +14,22 @@ function App() {
     const data = await response.json()
     console.log(data)
     setUpdatedTime(data.updateTime)
-    // setAnEWaitingTIme(data.waitTime)
-    hospitals.forEach((hosp, i) => {
-      data.waitTime.forEach((temp, j) => {
-        if (hosp.hospName ===  temp.hospName) {
-          hosp.topWait = temp.topWait
-        }
-      })
-    })
 
+    const updatedHospitals = hospitals.map((hosp, i) => {
+      const updatedTopWait = data.waitTime.find(temp => temp.hospName === hosp.hospName)?.topWait || hosp.topWait
+      return {
+        ...hosp, topWait: updatedTopWait
+      }
+    })
+    setHospitals(updatedHospitals)
   }
 
   useEffect(() => {
     fetchAPIData()
   }, [])
 
-  // useEffect(() => {
-  //   console.log("AnEWaitingTime", AnEWaitingTime);
-  //   console.log("updatedTime", updatedTime);
-  //   hospitals.forEach((hosp, i) => {
-  //     AnEWaitingTime.forEach((temp , i) => {
-  //       if (hosp.hospName === temp.hospName) {
-  //         hosp.waitingTime = temp.topWait
-  //         // console.log('found. temp', temp)
-  //       }
-  //     })
-  //     // console.log('hosp', hosp)
-  //     // console.log('AnEWaitingTime', AnEWaitingTime)
-  //   })
-  // }, [AnEWaitingTime, updatedTime]);
-
-
   return (
-    <div className='text-slate-600 mx-full min-h-screen relative' >
+    <div className='  text-slate-600 mx-full h-vh relative md:text-lg'>
       <Header />
       <Content hospitals={hospitals} updatedTime={updatedTime} fetchAPIData={fetchAPIData}/>
       <Footer />

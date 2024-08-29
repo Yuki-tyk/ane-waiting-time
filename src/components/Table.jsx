@@ -6,10 +6,10 @@ export default function Table(props) {
   console.log('updatedTime', updatedTime)
 
   return (
-    <div className='mt-4 relative'>
+    <div className='mt-1 overflow-auto max-h-full'>
       
-      <table className=' mx-w-full min-w-screen w-auto place-items-auto m-auto'>
-        <thead>
+      <table className='max-w-xl mx-auto mx-w-full min-w-screen place-items-auto m-auto'>
+        {/* <thead>
           <tr>
             <td className=''>
               As at {updatedTime}</td>
@@ -19,7 +19,7 @@ export default function Table(props) {
               </button>
             </td>
           </tr>
-        </thead>
+        </thead> */}
         <tbody>
           <tr className='border-2 bg-slate-200 sticky top-0'>
             <td className='p-2'>
@@ -30,11 +30,11 @@ export default function Table(props) {
           {hospitals.map((hosp, i) => {
             if (hosp.region==="Hong Kong Island") {
               return (
-                <tr key={i} className='p-2 border-2'>
-                  <td className='p-2 pl-4'>
+                <tr key={i} className='pt-2 border-2'>
+                  <td className='pt-2 pl-3'>
                     <a href={hosp.url} target='_blank' className='hover:underline'>{hosp.hospName}</a>
                   </td>
-                  <td className='pt-2 mr-2 float-right'>
+                  <td className='pt-2 mr-2 float-right lowercase'>
                     {hosp.topWait ? hosp.topWait : 'N/A'}
                   </td>
                 </tr>
@@ -51,10 +51,10 @@ export default function Table(props) {
             if (hosp.region==="Kowloon") {
               return (
                 <tr key={i} className='p-2 border-2'>
-                  <td className='p-2 pl-4'>
+                  <td className='p-2 pl-3'>
                     <a href={hosp.url} target='_blank' className='hover:underline'>{hosp.hospName}</a>
                   </td>
-                  <td className='pt-2 mr-2 float-right'>
+                  <td className='pt-2 mr-2 float-right lowercase'>
                     {hosp.topWait ? hosp.topWait : 'N/A'}
                   </td>
                 </tr>
@@ -71,10 +71,10 @@ export default function Table(props) {
             if (hosp.region==="New Territories") {
               return (
                 <tr key={i} className='p-2 border-2'>
-                  <td className='p-2 pl-4'>
+                  <td className='p-2 pl-3'>
                     <a href={hosp.url} target='_blank' className='hover:underline'>{hosp.hospName}</a>
                   </td>
-                  <td className='pt-2 mr-2 float-right'>
+                  <td className='pt-2 mr-2 float-right lowercase'>
                     {hosp.topWait ? hosp.topWait : 'N/A'}
                   </td>
                 </tr>
