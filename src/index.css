@@ -1,9 +1,101 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   /* text-color */
+}
+
+#container {
+  display: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: rbg(71 85 105);
+  font-size: clamp(0.95rem, 1.5vw, 1.125rem);
+}
+
+#header {
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.6rem, 4vw, 2.0rem);
+  padding: 0.1em 0;
+  font-weight: 600;
+  background-color: rgb(251, 84, 84);
+  color: white;
+
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  /* padding: 1em; */
+  height: 100%;
+}
+
+#clarity-statement {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: red;
+  padding: 0.5em;
+}
+
+#table-container {
+  margin: 0 auto;
+  /* height: 80%; */
+  width: 100%;
+  max-height: 50%;
+  max-width: 800px;
+  overflow: auto;
+  margin-top: 0.75rem;
+  position: relative;
+  height: 50%;
+}
+
+#updated-time-statement {
+  padding: 0 0.5rem;
+}
+
+#reload-btn {
+  float: right;
+  margin-right: 0.5rem;
+}
+
+#table {
+  height: 50%;
+  width: 100%;
+  max-height: 50%;
+  overflow: auto;
+}
+
+.region-row {
+  border-width: 2px;
+  background-color: rgb(226 232 240);
+  position: sticky;
+  top: 0;
+}
+
+.region {
+  padding: 0.5rem;;
+}
+
+.hosp-row {
+  /* padding: 0 1rem; */
+  border-width: 2px;
+}
+
+.hosp-name {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+.hosp-topWait {
+  margin-right: 0.5rem;
+  padding-top: 0.5rem;
+  text-transform: lowercase;
+  float: right;
 }
 
 a {
@@ -13,17 +105,17 @@ a {
 }
 a:hover {
   color: #535bf2;
+  text-decoration: underline;
 }
 
-@media (prefers-color-scheme: light) {
-  /* :root {
-    color: #213547;
-    background-color: #ffffff;
+
+@media (min-width: 768px) {
+  body {
+    /* font-size: 1.125rem; */
+    /* line-height: 1.75rem; */
   }
-  a:hover {
-    color: #747bff;
+
+  .hosp-name {
+    padding: 0.5rem 0 0.5rem 1rem;
   }
-  button {
-    background-color: #f9f9f9;
-  } */
 }
