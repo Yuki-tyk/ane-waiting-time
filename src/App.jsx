@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
-// import Footer from './components/Footer'
+import Footer from './components/Footer'
 import Content from './components/Content'
-import { HOSPITALS } from './data/hospitals'
+import { HOSPITALS } from './utils/hospitals'
 
 function App() {
   const [updatedTime, setUpdatedTime] = useState(null)
@@ -29,10 +29,10 @@ function App() {
   }, [])
 
   return (
-    <div id="container">
+    <div className='  text-slate-600 mx-full h-vh relative md:text-lg'>
       <Header />
       <Content hospitals={hospitals} updatedTime={updatedTime} fetchAPIData={fetchAPIData}/>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
