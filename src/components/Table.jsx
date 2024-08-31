@@ -7,17 +7,6 @@ export default function Table(props) {
 
   return (
     <table id='table' className=''>
-      {/* <thead>
-        <tr>
-          <td className=''>
-            As at {updatedTime}</td>
-          <td className='float-right mr-1'>
-            <button onClick={fetchAPIData}>
-              <i className="fa-solid fa-rotate"></i>
-            </button>
-          </td>
-        </tr>
-      </thead> */}
       <tbody>
         <tr className='region-row'>
           <td className='region'>

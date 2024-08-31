@@ -8,7 +8,6 @@ export default function Content(props) {
       <p id='clarity-statement'>
           Priority will be accorded to patients triaged as critical, emergency and urgent.
       </p>
-
       <div id='table-container'>
         <div id='updated-time-statement'>
           As at {updatedTime}
