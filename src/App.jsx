@@ -11,7 +11,6 @@ function App() {
     const url = "https://www.ha.org.hk/opendata/aed/aedwtdata-en.json"
     const response = await fetch(url)
     const data = await response.json()
-    console.log(data)
     setUpdatedTime(data.updateTime)
 
     const updatedHospitals = hospitals.map((hosp, i) => {

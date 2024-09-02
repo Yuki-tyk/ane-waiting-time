@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Table(props) {
-  const { hospitals, updatedTime, fetchAPIData } = props
+  const { hospitals, updatedTime } = props
   console.log('hospitals', hospitals)
   console.log('updatedTime', updatedTime)
 

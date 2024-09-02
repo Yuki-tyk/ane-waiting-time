@@ -84,6 +84,17 @@ p, h1, h2, h3, h4, h5, h6 {
 #reload-btn {
   float: right;
   margin-right: 0.5rem;
+  transition-duration: 200ms;
+}
+
+.rotate-once {
+  animation: rotate 1s forwards;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #table {
